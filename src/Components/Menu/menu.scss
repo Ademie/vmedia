@@ -1,0 +1,43 @@
+@import "../../variables.scss";
+@import "../../mixin.scss";
+.menu{
+    width: 18.75rem;
+    height: 100vh;
+    @include bars();
+    // hide menu from screen, the hamburger icon will display it later on click
+    right: -18.75rem;
+    top: -18.75rem;
+    z-index: 2;
+    @include flexy();
+    flex-direction: column;
+    transition: all 1s ease-in;
+    
+    // display menu on hamburger click
+    &.active{
+        right: 0;
+        top: 0;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size:1.875rem ;
+        margin-left: -4rem;
+        font-weight: 200!important;
+        width: 60%;
+
+        li{
+            margin-bottom: 1.2rem;
+            a{
+                font-size: inherit;
+                color: white;
+                @include mobile{
+                    font-size: 80%;
+                }
+            }
+            &:hover{
+                font-weight: 900!important;
+            }
+        }
+    }
+}

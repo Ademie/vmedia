@@ -1,0 +1,28 @@
+$width: 768px;
+
+@mixin flexy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin bars {
+  background: $mainColor;
+  position: fixed;
+  top: 0;
+}
+
+@mixin hidescroll {
+  scroll-snap-type: y mandatory;
+  // hide scroll bar
+  scrollbar-width: none; //for firefox
+  &::-webkit-scrollbar {
+    display: none; //for other browsers
+  }
+}
+
+// responsiveness
+@mixin mobile{
+  @media (max-width: #{$width}) {
+    @content
+  }
+}

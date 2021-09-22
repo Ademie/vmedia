@@ -1,0 +1,85 @@
+@import "../../mixin.scss";
+.contact {
+  background: white;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 1;
+    @include flexy();
+    flex-direction: column;
+    h2 {
+      font-size: 30px;
+    }
+
+    form {
+      width: 70%;
+      height: 70%;
+      @include flexy();
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      input {
+        width: 300px;
+        height: 30px;
+        font-size: 14px;
+        @include mobile {
+          width: 200px;
+          height: 20px;
+        }
+      }
+
+      textarea {
+        width: 300px;
+        height: 200px;
+        font-size: 14px;
+        @include mobile{
+          width: 200px;
+          height: 100px;
+        }
+      }
+      button {
+        width: 300px;
+        height: 30px;
+        color: white;
+        background: #e91c97;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 7px rgb(133, 133, 133);
+        @include mobile{
+          width: 200px;
+          height: 20px;
+        }
+        &:hover {
+          background: #f4129a;
+        }
+        &:active {
+          background-color: #f4129a;
+          box-shadow: 0 3px #666;
+          transform: translateY(4px);
+        }
+      }
+
+      span {
+        color: #f4129a;
+        text-align: center;
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    overflow: hidden;
+    background: rebeccapurple;
+    img {
+      height: 90%;
+      filter: hue-rotate(-40deg);
+    }
+  }
+}

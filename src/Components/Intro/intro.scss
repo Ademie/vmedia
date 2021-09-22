@@ -1,0 +1,122 @@
+@import "../../mixin.scss";
+
+.intro{
+    background: white;
+    @include flexy();
+    @include hidescroll();
+    
+    @include mobile{
+        flex-direction: column;
+
+    }
+    .left{
+        flex: 0.5;
+        overflow: hidden;
+
+        .imgContainer{
+            width: 43.8rem;
+            height: 43.8rem;
+            background-color: rebeccapurple;
+            border-radius: 50%;
+            @include flexy();
+            @include mobile{
+                align-items: flex-start;
+            }
+            img{
+                height: 60%;
+                animation: rotation 2.5s infinite linear;
+                @include mobile{
+                    height: 40%;
+                    margin-top: 20px;
+                }
+            }
+            @keyframes rotation {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(359deg);
+                }
+              }
+        }
+    }
+    .right{
+        flex: 0.5;
+        .wrapper{
+            width: 100%;
+            height: 100%;
+            // padding-left: 50px;
+            @include flexy();
+            flex-direction: column;
+            align-items: flex-start;
+
+            @include mobile{
+                padding-left: 0;
+                min-width: 80vw;
+                max-width: 80vw;
+                text-align: center!important;
+                align-items: center;
+            }
+
+
+            h1{
+                font-size: 3.8rem;
+                margin: 0.6rem 0;
+                @include mobile{
+                    font-size: 40px;
+                }
+            }
+            h2{
+                font-size: 2.2rem;
+                @include mobile{
+                    font-size: 20px;
+                }
+            }
+            h3{
+                font-size: 1.9rem;
+                @include mobile{
+                    font-size: 20px;
+
+                }
+                // typed text
+                span{
+                    font-size: inherit;
+                    color: rebeccapurple;                    
+                }
+                
+                // Animation for typed text
+                .ityped-cursor{
+                    animation: blink 1s infinite;
+                }
+
+                @keyframes blink{
+                    50%{
+                        opacity: 1;
+                    }
+                    100%{
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        .navarrow{
+            position: absolute;
+            bottom: 10px;
+            left: 60%;
+                @include mobile{
+                    left: 47%;
+                }
+
+            img{
+                width: 30px;
+                animation: arrowBlink 2s infinite;
+            }
+
+            @keyframes arrowBlink{
+                100%{
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+}

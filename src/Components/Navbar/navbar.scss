@@ -1,0 +1,99 @@
+@import "../../variables.scss";
+@import "../../mixin.scss";
+.navbar {
+  width: 100%;
+  height: 70px;
+  color: white;
+  z-index: 3;
+  transition: all 1.5s ease-in;
+  @include bars();
+
+  .wrapper {
+    padding: 10px 30px;
+    @include flexy();
+    justify-content: space-between;
+
+    .left {
+      @include flexy();
+      .logo {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: inherit;
+        margin-right: 2.5rem;
+        @include mobile{
+          font-size: 2.2rem;
+        }
+        img{
+          max-width: 100%;
+          width: 20px;
+        }
+      }
+      .item {
+        // float: right;
+        position: absolute;
+        right: 80px;
+        @include mobile{
+          bottom:0px;
+          right: 50px;
+        }
+        img{
+          width: 30px;
+          @include mobile{
+            width: 20px;
+          }
+        }
+        .icon {
+          margin-right: 0.3125rem;
+        }
+      }
+    }
+
+    .right {
+      .hamburger {
+        width: 2rem;
+        max-width: 100%;
+        overflow: hidden;
+        height: 1.5635rem;
+        @include flexy();
+        @include mobile{
+          width: 1.5rem;
+          height: 1.4rem;
+        }
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        span {
+          width: 100%;
+          overflow: hidden !important;
+          height: 0.1875rem;
+          background: white;
+          transform-origin: left;
+          transition: all 1.7s ease-in;
+        }
+      }
+    }
+  }
+
+  //   change navbar color on hamburger click
+  &.active {
+    background: white;
+    color: $mainColor;
+
+    .hamburger {
+      span {
+        &:first-child {
+          background: $mainColor;
+          transform: rotate(45deg);
+        }
+        &:last-child {
+          background: $mainColor;
+          transform: rotate(-45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
