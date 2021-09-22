@@ -1,4 +1,19 @@
 @import "../src/mixin.scss";
+/* Make sure contents do not slide on mobile screen */
+html,
+body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+*, *::before, *::after{  
+    margin: 0;
+    padding:0;
+    box-sizing: inherit!important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+html{
+    box-sizing: border-box!important;
+}
 a{
     text-decoration: none;
 

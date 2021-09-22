@@ -28,8 +28,8 @@ function App() {
         <Testimonials/>
         <Team/>
         <Contact/>
-        <MessengerCustomerChat pageId="272925574521401" appId="332992658602823" />
       </div>
+      <MessengerCustomerChat style={{height:"0px"}} pageId="272925574521401" appId="332992658602823" />
     </div>
   );
 }
