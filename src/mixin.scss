@@ -1,4 +1,8 @@
+// Mobile responsiveness
 $width: 768px;
+// Tablet responsiveness
+$tab-width: 790px;
+$tab-width-2: 1024px;
 
 @mixin flexy {
   display: flex;
@@ -23,6 +27,17 @@ $width: 768px;
 // responsiveness
 @mixin mobile{
   @media (max-width: #{$width}) {
+    @content
+  }
+}
+// Tablet
+@mixin tablet{
+  @media (max-width: #{$tab-width}){
+    @content
+  }
+}
+@mixin tablet-2{
+  @media (max-width: #{$tab-width-2}){
     @content
   }
 }

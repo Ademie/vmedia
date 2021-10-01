@@ -11,30 +11,47 @@
 .arrow{
     height: 50px;
     position: absolute;
-    // filter: invert(100%);
     filter: none;
     cursor: pointer;
+    @include tablet-2{
+      height: 30px;
+    }
     @include mobile{
-      // display: none;
       height: 25px;
       filter: none;
     }
     &.right{
         right: 150px;
         transform: rotate(-90deg);
+        @include tablet-2{
+          right:80px;
+        }
+
+        @include tablet{
+          bottom: 38%;
+        }
         @include mobile{
           bottom: 33%;
           right: 50px;
           filter: invert(100%);
         }
+        
     }
     &.left{
         left: 150px;
         transform: rotate(90deg);
+        @include tablet-2{
+          left:80px;
+        }
+
+        @include tablet{
+          bottom: 38%;
+        }
         @include mobile{
           bottom: 33%;
           left: 50px;
         }
+        
     }
 }
 // carousel

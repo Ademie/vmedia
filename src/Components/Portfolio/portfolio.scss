@@ -9,7 +9,9 @@
 
   h1 {
     font-size: 50px;
-
+    @include tablet-2{
+      height: 8%;
+  }
     @include mobile {
       font-size: 20px;
     }
@@ -32,6 +34,9 @@
     width: 70%;
     @include flexy();
     flex-wrap: wrap;
+    @include tablet-2{
+      width: 100%;
+  }
     @include mobile {
       width: 100%;
     }
